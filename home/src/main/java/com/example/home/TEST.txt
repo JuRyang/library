@@ -1,0 +1,43 @@
+package com.example.home;
+
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+ class TEST {
+//https://m.blog.naver.com/PostView.naver?blogId=occidere&logNo=222512549848&targetKeyword=&targetRecommendationCode=1
+    static String json ; //파싱할 최종 데이터 담아주기 위한 문자열
+
+    //생성자 통해 제이슨 생성
+     public TEST(){
+         JSONObject data1 = new JSONObject();
+         data1.put("professor","김교수");
+         data1.put("student", "이학생");
+
+         JSONObject data2 = new JSONObject();
+         data2.put("professor","이교수");
+         data2.put("student", "저학생");
+
+         JSONObject data3 = new JSONObject();
+         data3.put("professor","3교수");
+         data3.put("student", "3학생");
+
+         //위에 만든 3개의 오브젝트 데이터를 JSONArray에 순서대로 저장
+         JSONArray arr = new JSONArray();
+         arr.add(data1);
+         arr.add(data2);
+         arr.add(data3);
+
+         //최정적으로 univ오브젝트에 JSON배열 저장
+         JSONObject univ = new JSONObject();
+         univ.put("univ",arr);
+
+         //파시할 데이터 저장
+         json = univ.toJSONString();
+
+         System.out.println(json);
+
+     }
+
+}
+

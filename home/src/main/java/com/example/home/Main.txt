@@ -1,0 +1,35 @@
+package com.example.home;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class Main {
+    public static void main(String[] args) throws ParseException {
+
+        TEST test = new TEST();
+        //전체 파싱 정보가 저장된 test의 json을 자체 String을 생성하여 옮겨 닮는다.
+        String json = test.json;
+
+        JSONParser parser = new JSONParser();
+        JSONObject unvi = (JSONObject) parser.parse(json);
+
+        System.out.println("값 나오는지 테스트 >> "+unvi.toString());
+
+        JSONArray arr = (JSONArray) unvi.get("univ");
+
+        for (int i =0; i<arr.size(); i++){
+            JSONObject tmp = (JSONObject) arr.get(i);
+
+            String professor = (String) tmp.get("professor");
+            String student = (String) tmp.get("student");
+
+            System.out.println("------"+i+"번째 인덱스 값 ------");
+            System.out.println("교수 : "+professor);
+            System.out.println("학생 : "+student);
+
+        }
+
+    }
+}

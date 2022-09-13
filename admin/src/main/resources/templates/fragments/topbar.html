@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header class="bg-dark text-white" th:fragment="topbarFragment">
+	<a href="/dashboard" style="left: 30px; position: absolute">
+		<!-- logo -->
+		<?xml version="1.0" encoding="utf-8"?>
+		<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+		<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 176.9 84.1" style="height: 30px;" xml:space="preserve">
+							<style type="text/css">
+								.st0 {
+									fill: #FFFFFF;
+									width: 100px;
+								}
+
+							</style>
+			<g>
+								<path class="st0" d="M69.8,21L84.5,0H0l14.7,21H69.8z M29.4,42L0,84.1h25.7l29.4-42H29.4z M103.2,2.7L90.3,21l14.7,21l-14.7,21
+			H60.9l-14.7,21h55.1l29.4-42L103.2,2.7z M147.5,0h-25.7l29.4,42l-29.4,42h25.7l29.4-42L147.5,0z" />
+							</g>
+						</svg>
+		<!--// logo -->
+	</a>
+	<div class="top-menu">
+		<ul class="nav">
+			<li>
+				<a class="login-info" onclick="toggleLogout();"><strong th:text="${session.admin.name}"></strong>님</a>
+				<ul class="nav sub-nav bg-dark">
+					<li>
+						<button type="button" class="btn-logout" onclick="location.href='/logout'">로그아웃</button>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</header>
+
+</html>

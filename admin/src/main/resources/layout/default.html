@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>관리자 페이지</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Dashboard - SB Admin</title>
+	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+	<link href="/css/styles.css" rel="stylesheet" />
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<th:block layout:fragment="css"></th:block>
+</head>
+
+<body id="bdyContainer">
+<div id="wrap">
+	<div id="wrap-inner">
+		<header th:replace="fragments/topbar :: topbarFragment"></header>
+		<main>
+			<sidebar th:replace="fragments/sidebar :: sidebarFragment"></sidebar>
+			<div class="b-example-divider"></div>
+			<div class="a-example-divider"></div>
+
+			<div layout:fragment="content"></div>
+		</main>
+	</div>
+</div>
+
+
+
+<th:block layout:fragment="script"></th:block>
+
+ <script>
+
+
+ </script>
+
+</body>
+
+</html>

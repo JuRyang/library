@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>DAIWA 관리자</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<th:block layout:fragment="css"></th:block>
+</head>
+
+<body id="bdyContainer">
+<div id="wrap">
+	<div id="wrap-inner">
+		<main>
+			<div layout:fragment="content"></div>
+		</main>
+	</div>
+</div>
+
+
+
+<script src='/js/jquery.js'></script>
+<script src="/js/jquery-ui-v1.10.3.js"></script>
+<script src='/js/jquery.validate-1.11.1.min.js'></script>
+<script src='/js/jquery.tmpl.min.js'></script>
+<script src='/js/jquery.ba-bbq.min.js'></script>
+<script src='/js/jquery.ba-hashchange.min.js'></script>
+<script src='/js/bootstrap.js'></script>
+
+
+<script th:src="${#commonUtil.getVersion('/js/view/common.js')}"></script>
+<th:block layout:fragment="script"></th:block>
+
+<script>
+     $(document).ready(function() {
+		 MenuJS.init();
+		 AuthCheckJS.init();
+    });
+
+
+ </script>
+
+</body>
+
+</html>

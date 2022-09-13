@@ -1,0 +1,8 @@
+<div th:fragment="authFragment">
+	<th:block th:if="${menuAuth != null}">
+		<form id="frm_auth">
+			<input type="hidden" id="updateAuth" th:value="${menuAuth.uptYn}">
+			<input type="hidden" id="viewAuth" th:value="${menuAuth.viewYn}">
+		</form>
+	</th:block>
+</div>

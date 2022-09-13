@@ -1,0 +1,18 @@
+<sidebar id="lnb" th:fragment="sidebarFragment">
+<!--    <th:block th:if="${session.menu != null}">-->
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <th:block th:each="menu : ${session.menu}">
+                    <li th:if="${#lists.size(menu.itemList) != 0}"><a th:href="'#'+${menu.menuNo}" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle"><span th:text="${menu.menuTitle}"></span></a>
+                        <ul class="collapse list-unstyled collapse in" th:id="${menu.menuNo}">
+                            <th:block th:each="item : ${menu.itemList}">
+                                <li th:if="${item.viewYn == 'Y'}"><a th:id="${item.menuCode}" th:href="${item.url}"><span th:text="${item.menuTitle}"></span></a></li>
+                            </th:block>
+                        </ul>
+                    </li>
+                </th:block>
+            </ul>
+        </nav>
+    </th:block>
+
+</sidebar>
