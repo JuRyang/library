@@ -59,7 +59,6 @@ public class LoginRestController {
         if(loginRes == null){
             result.setRetcode("9999");
             result.setRetmsg("아이디/비밀번호 확인해주세요");
-
         }
 
 
@@ -79,7 +78,7 @@ public class LoginRestController {
         result.setRetcode("0000");
         result.setRetmsg("정상");
 
-
+        return result;
 
     }
 
